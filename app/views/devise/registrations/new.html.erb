@@ -21,12 +21,6 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" ,class: "form-control"%>
   </div>
 
-  <div class="field text-center p-3 offset-sm-4 col-sm-4">
-  <%= f.check_box :accepted ,{},checked_value = "true",unchecked_value = "false"%>
-  <%= link_to "利用規約",accepted_path%> に同意する 
-  </div>
-  
-
   <div class="actions text-center p-3">
     <%= f.submit "Sign up",class: "btn btn-info" %>
   </div>
