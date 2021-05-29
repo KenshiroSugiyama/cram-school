@@ -1,2 +1,12 @@
-<h1>Pages#top</h1>
-<p>Find me in app/views/pages/top.html.erb</p>
+<div class="text-center pt-5">
+  <h2>クラーク塾</h2>
+</div>
+<br>
+<div class="offset-3 col-6 mb-5">
+    <div class="card card-body bg-light mb-3 ">
+        <%= link_to 'ログイン',new_user_session_path, class: "text-center",:style=>"color:black;"%>
+    </div>
+    <div class="card card-body bg-light mb-3 ">
+        <%= link_to '新規登録',new_user_registration_path, class: "text-center",:style=>"color:black;"%>
+    </div>
+</div>
