@@ -4,16 +4,16 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="form-group text-center pt-3 offset-sm-4 col-sm-4">
-    <%= f.label :name, '名前' %>
+    <%= f.label :name, '名前（例 クラーク太郎）' %>
     <%= f.text_field :name, class: 'form-control' %>
   </div>
 
-  <div class="field text-center p-3 offset-sm-4 col-sm-4">
+  <div class="field text-center p-2 offset-sm-4 col-sm-4">
     <i class="fas fa-envelope"></i> <%= f.label :email,'メールアドレス' %><br>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" ,class: "form-control"%>
   </div>
 
-  <div class="field text-center p-3 offset-sm-4 col-sm-4">
+  <div class="field text-center p-2 offset-sm-4 col-sm-4">
     <i class="fas fa-lock"></i> <%= f.label :password,'パスワード' %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> 文字以上)</em>
@@ -21,17 +21,17 @@
     <%= f.password_field :password, autocomplete: "new-password",class: "form-control" %>
   </div>
 
-  <div class="field text-center p-3 offset-sm-4 col-sm-4">
+  <div class="field text-center p-2 offset-sm-4 col-sm-4">
     <i class="fas fa-lock"></i> <%= f.label :password_confirmation,'パスワード確認'%><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" ,class: "form-control"%>
   </div>
 
-  <div class="form-group text-center p-3 offset-sm-4 col-sm-4">
+  <div class="form-group text-center p-2 offset-sm-4 col-sm-4">
     <%= f.label :school_name, '学校名' %>
     <%= f.text_field :school_name, class: 'form-control' %>
   </div>
 
-  <div class="form-group text-center p-3 offset-sm-4 col-sm-4">
+  <div class="form-group text-center p-2 offset-sm-4 col-sm-4">
     <div class="row">
       <div class="col-sm-6 pr-0">
         <%= f.label :school, '中学' %>
@@ -45,8 +45,8 @@
     </div>
   </div>
 
-  <div class="actions text-center p-3">
-    <%= f.submit "登録",class: "btn btn-secondary" %>
+  <div class="actions text-center p-2">
+    <%= f.submit "登録",class: "btn btn-info" %>
   </div>
 <% end %>
 </div>
