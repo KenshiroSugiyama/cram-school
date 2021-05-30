@@ -1,6 +1,14 @@
-<div class="text-center pt-5">
-  <h2>mypage</h2>
+<div class="ml-3 mt-3"><%=@user.name%>さん</div> 
+<% unless @user.paycheck %>
+    <div class="mx-4 my-3 card">
+        <h6 class="card-header text-center bg-info text-white">＊重要＊</h5>
+        <div class="card-body">
+        <p class="card-text">入会金のお支払いが完了していません。サービスをご利用頂くためには、入会金のお支払いが必要です。</p>
+        <%= link_to 'お振込について（重要）',pages_membershipfee_path, class: "text-center"%>
+    </div>
 </div>
+<% end %>
+
 <br>
 <div class="offset-2 col-8 mb-5">
     <div class="card card-body bg-light mb-3 ">

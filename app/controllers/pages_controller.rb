@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   end
 
   def mypage
+    @user = User.find(current_user.id)
   end
 
   def membershipfee
