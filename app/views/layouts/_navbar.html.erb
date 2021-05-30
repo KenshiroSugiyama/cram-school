@@ -1,6 +1,10 @@
 <header class=" sticky-top">
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">クラーク塾</a>
+    <% if user_signed_in? %>
+      <a class="navbar-brand" href="/pages/mypage.<%= current_user.id %>">クラーク塾</a>
+    <% else %>
+      <a class="navbar-brand" href="#">クラーク塾</a>
+    <% end %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
       <span class="navbar-toggler-icon"></span>
     </button>
