@@ -5,22 +5,40 @@
         <div class="card-body">
         <p class="card-text">入会金のお支払いが完了していません。サービスをご利用頂くためには、入会金のお支払いが必要です。</p>
         <%= link_to 'お振込について（重要）',pages_membershipfee_path, class: "text-center"%>
+        </div>
     </div>
-</div>
+    <div class="offset-2 col-8 mt-4">
+        <div class="card card-body bg-light mb-3 ">
+                <%= link_to 'プロフィール編集',new_user_registration_path, class: "text-center",:style=>"color:black;"%>
+        </div>
+    </div>
+    <div class="offset-1 col-10 text-center mt-4">以下のサービスは入会金のお振込が確認でき次第ご利用頂けます。</div>
+    <div class="offset-2 col-8 mt-3 mb-5">
+        <div class="card card-body bg-secondary my-1 text-center">
+            <a href="#" class="text-dark">授業プラン選択</a>
+        </div>
+        <div class="card card-body bg-secondary mb-1 text-center">
+            <a href="#" class="text-dark">今月の授業予定</a>
+        </div>
+        <div class="card card-body bg-secondary mb-1 text-center ">
+            <a href="#" class="text-dark">過去の授業履歴</a>
+        </div>
+    </div>
+<% else%>
+    <div class="offset-2 col-8 my-4">
+        <div class="card card-body bg-light mb-3 ">
+            <%= link_to '授業プラン選択',new_user_session_path, class: "text-center",:style=>"color:black;"%>
+        </div>
+        <div class="card card-body bg-light mb-3 ">
+            <%= link_to '今月の授業予定',new_user_registration_path, class: "text-center",:style=>"color:black;"%>
+        </div>
+        <div class="card card-body bg-light mb-3 ">
+            <%= link_to '過去の授業履歴',new_user_registration_path, class: "text-center",:style=>"color:black;"%>
+        </div>
+        <div class="card card-body bg-light mb-3 ">
+            <%= link_to 'プロフィール編集',new_user_registration_path, class: "text-center",:style=>"color:black;"%>
+        </div>
+    </div>
 <% end %>
 
-<br>
-<div class="offset-2 col-8 mb-5">
-    <div class="card card-body bg-light mb-3 ">
-        <%= link_to '授業プラン選択',new_user_session_path, class: "text-center",:style=>"color:black;"%>
-    </div>
-    <div class="card card-body bg-light mb-3 ">
-        <%= link_to '今月の授業予定',new_user_registration_path, class: "text-center",:style=>"color:black;"%>
-    </div>
-    <div class="card card-body bg-light mb-3 ">
-        <%= link_to '過去の授業履歴',new_user_registration_path, class: "text-center",:style=>"color:black;"%>
-    </div>
-    <div class="card card-body bg-light mb-3 ">
-        <%= link_to 'プロフィール編集',new_user_registration_path, class: "text-center",:style=>"color:black;"%>
-    </div>
-</div>
+
