@@ -4,4 +4,7 @@ class PagesController < ApplicationController
 
   def mypage
   end
+
+  def membershipfee
+  end
 end
