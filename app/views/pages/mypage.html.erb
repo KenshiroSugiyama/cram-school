@@ -25,8 +25,29 @@
         </div>
     </div>
 <% else%>
-    <div class="offset-2 col-8 my-4">
-        <div class="card card-body bg-light mb-3 ">
+    <% if @lessons.length != 0 %>
+        <div class="mx-4 my-4 card">
+            <h6 class="card-header text-center bg-info text-white">＊重要＊</h5>
+            <div class="card-body">
+                <p class="card-text">授業料のお支払いが完了していないプランが<%= @lessons.length %>件あります。<br>お支払いの確認ができ次第、受講を開始頂けます。</p>
+                <% for a in @lessons do %>
+                    <div class="my-1">
+                        ・<%=a.subject%><%=a.plan%>コマプラン 　<% if a.plan = 10 %>28000円<% else %>15000円<% end %>
+                    </div>
+                <% end %>
+                <br>
+                <%= link_to '授業料の支払いについて（重要）',lessons_payment_path, class: "text-center"%> 
+            </div>
+        </div>
+    <% end %>
+    <% if @current_lessons.length != 0 %>
+        <div class="text-center">受講中のプラン</div>
+        <% for l in @current_lessons do %>
+            <div class="my-1 text-center"><%= l.subject %>　　<%=l.current %>/<%=l.plan %>回分受講済み</div>
+        <% end %>
+    <% end %>
+    <div class="offset-2 col-8 my-4 text-center">
+        <div class="card card-body bg-light mt-4 mb-3 ">
             <%= link_to '授業プラン選択',lesson_path, class: "text-center",:style=>"color:black;"%>
         </div>
         <div class="card card-body bg-light mb-3 ">
