@@ -1,4 +1,4 @@
-<div class="ml-3 mt-3"><%=@user.name%>さん</div> 
+<div class="ml-3 mt-3"><%=@user.name%>さん<br><%=@user.school_name%><%=@user.year%>年</div> 
 <% unless @user.paycheck %>
     <div class="mx-4 my-3 card">
         <h6 class="card-header text-center bg-info text-white">＊重要＊</h5>
@@ -27,7 +27,7 @@
 <% else%>
     <div class="offset-2 col-8 my-4">
         <div class="card card-body bg-light mb-3 ">
-            <%= link_to '授業プラン選択',new_user_session_path, class: "text-center",:style=>"color:black;"%>
+            <%= link_to '授業プラン選択',lesson_path, class: "text-center",:style=>"color:black;"%>
         </div>
         <div class="card card-body bg-light mb-3 ">
             <%= link_to '今月の授業予定',new_user_registration_path, class: "text-center",:style=>"color:black;"%>

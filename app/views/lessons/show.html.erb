@@ -1,0 +1,19 @@
+<div class="text-center">
+    <h4 class="my-4">現在申し込み中のプラン</h4>
+    <div>
+    <% for lesson in @lessons do %>
+        <% if lesson.payment?%>
+            <div class="my-1">
+                <%= lesson.subject %> <%= lesson.plan %>コマプラン ：支払い済み（受講中）<br>
+            </div>
+        <% else %>
+            <div class="my-1">
+                <%= lesson.subject %> <%= lesson.plan %>コマプラン ：未払い<br>
+            </div>
+        <% end %>
+    <% end %>
+    </div>
+    <div>
+    <%= link_to '新たにプランを追加する',lessons_new_path, class: "my-4 btn btn-info",:style=>"color:white;"%>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="row ml-4 mr-4 pt-5">
+    <div class="offset-sm-4 col-sm-4 text-center">
+        <%= form_with(model: @lesson, url: lessons_path, method: :post ) do |f| %>
+            <%= f.hidden_field :user_id, value: current_user.id %> 
+            <%= f.hidden_field :subject, value: params[:subject] %> 
+            <%= f.label :subject, "教科" %>
+            <%= f.select :subject, {'数学': "数学",'国語': "国語",'英語': "英語",'理科': "理科",'社会': "社会", }, { include_blank: '選択してください'}, { class: 'form-control mb-3' , required: true } %>
+            <%= f.label :plan, "プラン" %>
+            <%= f.select :plan, {'15000円/5コマ': 5, '28000円/10コマ': 10}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+            <%= f.submit '申し込む', data: { confirm: "申し込みますか？"}, class: ' btn btn-info btn-block my-4'%> 
+        <% end %>
+    </div>
+</div>
