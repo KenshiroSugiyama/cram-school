@@ -11,5 +11,10 @@ Rails.application.routes.draw do
   patch 'lessons/:id/add_lesson', to: 'lessons#add_lesson'
   patch 'lessons/:id/change_payment_status', to: 'lessons#change_payment_status'
   delete 'lessons/:id', to: 'lessons#destroy'
+
+  get 'lessons/done'
+  get 'lessons/purchase', to: 'lessons#purchase'
+  post 'lessons/pay', to: 'lessons#pay'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

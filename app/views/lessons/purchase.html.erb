@@ -1,0 +1,21 @@
+<h4 class ="mt-5 text-center">購入確認</h4>
+<div class="mt-5 text-center">    
+    <h6 class="mb-1">教科： <%=@lesson.subject %></h6>
+    <h6 class="mb-1">授業数： <%=@lesson.plan %>コマ</h6>
+    <h6 class="mb-5">金額： 
+        <% if @lesson.plan == 10 %>28000<% else %>15000<%end%>円</h6>
+    <%= form_tag(action: :pay, method: :post) do %>
+    <%= hidden_field_tag :id, params[:id] %>
+    <script
+    type="text/javascript"
+    src="https://checkout.pay.jp/"
+    class="payjp-button"
+    data-key="pk_test_7d73d6b54f21bc401e60f162"
+    data-partial="false">
+    </script>
+    <% end %>
+</div>
+
+<div class="my-5 text-center">
+  <%= link_to 'キャンセル',pages_mypage_path %>
+</div>
